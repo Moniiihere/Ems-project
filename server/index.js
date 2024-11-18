@@ -14,7 +14,9 @@ app.use(cors(
     }))
 
 mongoose.connect("mongodb+srv://monisha212206:kss-company@kss.d20qi.mongodb.net/employee")
-
+app.get("/",(req,res) => {
+    res.json("hello");
+})
 app.post("/login", (req, res) => {
     const { email, password } = req.body;
     EmployeeModel.findOne({ email: email })
